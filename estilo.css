@@ -1,3 +1,6 @@
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -13,13 +16,14 @@
 /*titulo barra de arriba*/
 
 .header1{
-        background-image: linear-gradient(to right, #E100FF,#7700ff);
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
-        height: 65px;
-        position: sticky;
-        top: 0;
+    background-image: linear-gradient(to right, #E100FF,#7700ff);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    height: 65px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }       
 
 
@@ -64,16 +68,31 @@
 }   
 
 
-.menues li a.active {
+.menues li .active {
     color: #ffffff;
     font-weight: bolder;
- }
+    animation-name: activa;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
 
 .menues li a:hover {
     color: #00ccff;
     background-color: #ffffff9a;
     font-weight: bolder;
     border-radius: 20px;
+}
+
+@keyframes activa  {
+    0%{
+        transform: scale(1,1);
+    }
+
+    75%{
+        transform: scale(1.05,1.05);
+    }
+    
 }
 
 .logoInicio a:hover {
@@ -93,6 +112,7 @@
     height: 100vh;
     overflow: hidden;
 }
+
 
 
 .mainHome{
@@ -160,6 +180,41 @@ text-shadow: 1px 1px #000000;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*seccion de galeria*/
 .menugaleria{
     background-repeat: no-repeat;
@@ -177,15 +232,29 @@ text-shadow: 1px 1px #000000;
     align-items: center;
     justify-content:space-around;
     align-content: space-around;
-   padding-top: 15px;
-   padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .menugaleria img{
     width: 100%;
     height: 100%;
-    border-radius:10%
+    border-radius:10%;
+    transition: all 2s;
 }
+
+
+
+.menugaleria img:hover{
+    transform: scale(1.05,1.05);
+    border-radius:0%;
+    z-index: 0;
+}
+
+
+
+
+
 
 /*empezamos contacto*/
 
@@ -218,7 +287,6 @@ text-shadow: 1px 1px #000000;
     border-radius: 30px;
     backdrop-filter: blur(5px);
     z-index: -1;
-    
 }
 
 
@@ -236,6 +304,15 @@ text-shadow: 1px 1px #000000;
     font-size: 20px;
 }
 
+.miFormulario input:hover{
+    border-color: rgb(248, 39,147);
+}
+
+.miFormulario input:focus{
+    transform: scale(1.02,1.02);
+}
+
+
 .miFormulario textarea{
     margin-top: 15px;
     border-radius: 15px;
@@ -248,6 +325,15 @@ text-shadow: 1px 1px #000000;
     width: 300px;
 }
 
+.miFormulario textarea:hover{
+    border-color: rgb(248, 39,147);
+}
+
+
+.miFormulario textarea:focus{
+    transform: scale(1.02,1.02);
+}
+
 .miFormulario input::placeholder {
     text-align: center;
 }
@@ -255,17 +341,6 @@ text-shadow: 1px 1px #000000;
 .miFormulario textarea::placeholder {
     text-align: center;
 }
-
-.miFormulario input:focus {
-    border-color:rgb(248, 39,147);
-    outline: rgb(248, 39,147);
-}
-
-.miFormulario textarea:focus{
-    border-color:rgb(248, 39,147);
-    outline: rgb(248, 39,147);
-}
-
 
 
 /*empieza la seccion sobre mi*/
@@ -504,13 +579,13 @@ text-shadow: 1px 1px #000000;
 /*acomodar letras del titulo y subir*/
 .subir{
     text-decoration: none;
-    margin-left: 50%;
-    color: #4400ff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 17px;
+    margin-left: 95%;
+    height: 10px;
+    width: 10px;
     position: -webkit-sticky;
     position: sticky;
     top: 93vh;
+    
 }
 
 
