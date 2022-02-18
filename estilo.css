@@ -1,0 +1,820 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*toda la pagina*/
+.bodySinScroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/*titulo barra de arriba*/
+
+.header1{
+        background-image: linear-gradient(to right, #E100FF,#7700ff);
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        height: 65px;
+        position: sticky;
+        top: 0;
+}       
+
+
+
+/*titulo barra de arriba*/
+.titulo {
+    font-size: 80px;
+    text-decoration: none;
+    color: rgb(248, 39,147);
+    margin-left: 2px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 500;
+}
+
+
+/*titulo barra de arriba*/
+.menues{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+
+/*titulo barra de arriba*/
+.menues li a {
+    display: inline-block;
+    height: 100%;
+    color: rgb(248, 39,147);
+    -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 700;   
+    font-family: 'Rubik', sans-serif;
+}   
+
+
+.menues li a.active {
+    color: #ffffff;
+    font-weight: bolder;
+ }
+
+.menues li a:hover {
+    color: #00ccff;
+    background-color: #ffffff9a;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+.logoInicio a:hover {
+    color: #00ccff;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+/*iconos*/
+.icon {
+    margin-right: 3px;
+    width: 25px;
+   height: auto;
+}
+/*cuerpo de la pagina*/
+.pagina{
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.mainHome{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295), rgba(0, 0, 0, 0.281)), url("fondo.jpg");  
+    /* Position and center the image to scale nicely on all screens */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
+
+/*esto es el main*/
+.tituloPrincipal{
+    font-family: 'Great Vibes', cursive;
+    font-size: 150px;
+    color: rgb(119, 206, 240);
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 1px 1px #000000;
+}
+
+/*esto es el main*/
+.descripcionPrincipal {
+font-size: 40px;
+text-align: center;
+font-family: 'Dancing Script', cursive;
+font-weight: bolder;
+color: rgb(119, 206, 240);
+text-shadow: 1px 1px #000000;
+}
+
+
+
+/*pertenece al footer*/
+.miFooter{
+    background-image: linear-gradient(to right, #E100FF,#7700ff);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    color: rgb(165, 165, 165);
+    height: 100px;
+}
+
+.miFooter ul li a {
+    color: rgb(165, 165, 165);
+}
+
+.miFooter ul li a img{
+    width: 40px;
+}
+
+.miFooter ul  {
+    width: 150px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+/*seccion de galeria*/
+.menugaleria{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(5, 238, 255, 0.123), rgba(5, 238, 255, 0.13)), url("html/Otras/fondo1.jpg");
+    display: grid;/*transforma al contenedor flexible*/
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: 400px 350px 400px;
+    grid-template-areas: "imagen1 imagen2 imagen3 imagen4"
+                        "imagen5 imagen6 imagen7 imagen8"
+                        "imagen9 imagen10 imagen11 imagen12";
+    column-gap: 10px; /*lo que hace es dar espacio entre las columnas en la grilla*/
+    row-gap: 10px; /*este lo que hace es dar espacio entre las filas*/
+    justify-items:center;
+    align-items: center;
+    justify-content:space-around;
+    align-content: space-around;
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+
+.menugaleria img{
+    width: 100%;
+    height: 100%;
+    border-radius:10%
+}
+
+/*empezamos contacto*/
+
+.mainContacto{
+    height: calc(100vh - 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(html/Contactanos/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.miFormulario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgba(100, 5, 119, 0.815);
+    padding: 25px;
+    border-radius: 25px;
+    width  : 300px;
+    height : 350px;
+}
+
+.miFormulario::before {
+    content: "";
+    position:absolute;
+    width: 350px;
+    height: 400px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    
+}
+
+
+
+
+.miFormulario input {
+    display: block;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    border-color: cyan;
+    background-color: rgba(255, 212, 234, 0.521);
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+
+.miFormulario textarea{
+    margin-top: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px inset cyan;
+    background-color: rgba(255, 212, 234, 0.521);
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    height: 150px;
+    width: 300px;
+}
+
+.miFormulario input::placeholder {
+    text-align: center;
+}
+
+.miFormulario textarea::placeholder {
+    text-align: center;
+}
+
+.miFormulario input:focus {
+    border-color:rgb(248, 39,147);
+    outline: rgb(248, 39,147);
+}
+
+.miFormulario textarea:focus{
+    border-color:rgb(248, 39,147);
+    outline: rgb(248, 39,147);
+}
+
+
+
+/*empieza la seccion sobre mi*/
+
+.sobreMiMain{
+    height:900px ;
+    background-color:rgb(153, 0, 255);
+}
+
+.sobreMi{
+    display: grid;
+    grid-template-columns:600px 50%;
+    grid-template-rows: 100px 300px 50px 50px 300px;
+    grid-template-areas:"titulo video"
+                        "texto  video"
+                        "encontranos encontranos"
+                        "direccion direccion"
+                        "mapa mapa";
+   justify-items:center;
+   align-items: center;
+   justify-content: space-around;
+
+}
+
+.sobreMiMapa{
+    border: 2px solid rgb(219, 118, 135);
+    grid-area: mapa;
+    width: 50%;
+    height: 100%
+}
+
+.sobreMi a {
+    grid-area: direccion;
+    text-decoration:none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+
+.sobreMiTexto{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    width: 100%;
+    align-self:flex-start;
+
+}
+
+.sobreMiEncontranosEn{
+    grid-area: encontranos;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+
+
+.sobreMiTitulo{
+    grid-area: titulo;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 60px;
+    padding-bottom: 10px;
+    color: palevioletred;
+}
+
+.sobreMiTitulo::first-letter {
+    font-size: 4rem;
+}
+
+.sobreMiVideo{
+    border: 2px solid rgb(219, 118, 135);
+    height: 80%;
+    width: 90%;
+    grid-area: video;
+}
+
+
+
+
+
+/*aca estamos con la seccion de recetas*/
+.todo{
+    position: relative;
+}
+
+
+.mainRecetas{
+    display: flex;
+    flex-direction: column;
+    background-image: url(html/Recetas/fondo.jpg);
+}
+
+
+
+.articulosReceta{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.articulosRecetaFormulario{
+    display: flex;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 20px;
+    color: rgb(114, 14, 172);
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+.articulosRecetaFormulario form{
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+    
+.articulosRecetaFormulario ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-direction: row;
+    background-color: purple;
+    border-radius: 25px;
+    padding: 10px 10px 10px 10px;
+}
+
+.articulosRecetaFormulario ul li a{
+    text-decoration:none;
+    color: white;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 2px solid rgb(167, 43, 216);
+}
+
+.articulosRecetaFormulario ul li a:hover {
+    color: #133d47;
+    background-color: #ffffff9a;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+.recetasBusqueda input{
+    border-radius: 50px;
+    display: inline;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: #133d4756;
+    text-align: center;;
+    
+}
+
+.recetasBusqueda button {
+    border-radius: 50px;
+    display: inline;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: #133d4756;
+    color: #ffffffa1 
+}
+
+.recetasBusqueda input:hover {
+    color: #133d47;
+    background-color: #ffffff9a;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+.recetasBusqueda button:hover {
+    color: #133d47;
+    background-color: #ffffff9a;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+/*seccion recetas calientes*/
+.recetas{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.recetas div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+
+
+.recetas article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 285px;
+    height: 350px;
+    padding: 15px;
+    margin:10px 15px 12px 10px ;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 6px 6px black;
+    background-color: #e7dfff;
+    overflow: hidden;
+}
+
+.recetas article img {
+    height: 50%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/*acomodar letras del titulo y subir*/
+.subir{
+    text-decoration: none;
+    margin-left: 50%;
+    color: #4400ff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 93vh;
+}
+
+
+/*vamos a acomodar los sub titulos de cada receta*/
+.subSeccion{
+    font-family: 'Roboto', sans-serif;
+    font-style: oblique;
+    margin-left: 15px;
+    margin-top: 100px;
+    -webkit-text-stroke: 1px rgb(6, 252, 239);
+    color:#4400ff ;
+}
+
+
+
+
+/*ver mas solo de caliente*/
+.verMasCaliente{
+    background-image: url(html/Recetas/masrecetascaliente.jpg);
+    background-size: 100% 100%; 
+}
+
+
+.verMasCaliente a:hover{
+    font-size: 90px;
+    color: #00ccff;
+
+}
+
+.verMasCaliente a {
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+/*-------------*/
+
+/*ver mas solo de frio*/
+.verMasFrio{
+    background-image: url(html/Recetas/masrecetasfrio.jpg);
+    background-size: 100% 100%; 
+}
+
+
+.verMasFrio a:hover{
+    font-size: 90px;
+    color: #00ccff;
+
+}
+
+.verMasFrio a {
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+/*-------------*/
+
+/*ver mas solo de frito*/
+.verMasFrito{
+    background-image: url(html/Recetas/masrecetasfrito.jpg);
+    background-size: 100% 100%; 
+}
+
+
+.verMasFrito a:hover{
+    font-size: 90px;
+    color: #00ccff;
+
+}
+
+.verMasFrito a {
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+/*-------------*/
+
+/*ver mas solo de base de helado*/
+.verMasBaseHelado{
+    background-image: url(html/Recetas/masrecetasbase_helado.jpg);
+    background-size: 100% 100%; 
+}
+
+
+.verMasBaseHelado a:hover{
+    font-size: 90px;
+    color: #00ccff;
+
+}
+
+.verMasBaseHelado a {
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+/*-------------*/
+
+/*ver mas solo de queso y fruta*/
+.verMasQuesoyFruta{
+    background-image: url(html/Recetas/masrecetasquesoyfruta.jpg);
+    background-size: 100% 100%; 
+}
+
+
+.verMasQuesoyFruta a:hover{
+    font-size: 90px;
+    color: #00ccff;
+
+}
+
+.verMasQuesoyFruta a {
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+/*-------------*/
+
+
+
+/*------------ empezamos a probar mediaqueries ---------------------*/
+/*para celulares*/
+@media only screen and (max-width:600px) {
+
+    /*eso es el header*/
+    .header1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 240px;
+        position:static ;
+    }
+    .menues{
+        flex-direction: column;
+
+        
+    }
+
+    .menues li {
+        padding: 7px;
+    }
+    .menues li a {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+
+    .icon {
+        margin-right: 3px;
+        width: 15px;
+       height: 15px;
+    }
+
+
+    .logoInicio a{
+        justify-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-size: 30px;
+    }
+
+    /*--------- esto es el footer----------- */
+    .miFooter{
+
+        height: 70px;
+        font-size: 12px;
+    }
+
+
+    .miFooter ul li a img{
+        width: 20px;
+    }
+
+    .miFooter ul  {
+        width: 80px;
+        
+
+    }
+
+
+
+
+
+
+    /*-----------  esto es el main PRINCIPAL------------*/
+
+    .mainHome{
+        align-items: flex-start;
+        padding: 30%;
+        background-position: center center;
+        background-attachment: fixed;
+
+    }
+
+
+    .tituloPrincipal{
+        font-family: 'Great Vibes', cursive;
+        align-items: flex-start;
+        justify-items: center;
+        font-size: 100px;
+ 
+    }
+    
+    
+    .descripcionPrincipal {
+     font-size: 30px;
+
+    }
+
+
+
+    /*----------- esto pertenece a la galeria ---------------*/
+    .menugaleria{
+        display: grid;/*transforma al contenedor flexible*/
+        grid-template-columns: 70%;
+        grid-template-rows: 350px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px ;
+        grid-template-areas: "imagen1"
+                             "imagen2"
+                             "imagen3"
+                             "imagen4"
+                             "imagen5"
+                             "imagen6"
+                             "imagen7"
+                             "imagen8"
+                             "imagen9"
+                             "imagen10"
+                             "imagen11"
+                             "imagen12";
+        justify-items:center;
+        align-items: center;
+        justify-content:center;
+        align-content: center;
+
+        
+    }
+    
+
+    /*---------esto pertenece a la seccion sobre mi-----*/
+    .sobreMiMain{
+        height: 900px;
+    }
+    
+    .sobreMi{ 
+        display: flex;
+        flex-direction: column;
+        height: 900px;
+        
+    }
+
+    .sobreMiTitulo{
+        text-align: center;
+    }
+
+    .sobreMiTexto{
+        text-align: center;
+        font-size: 15px;
+        width: 85%;
+    }
+
+    .sobreMiEncontranosEn
+    {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .sobreMi a{
+        margin-top: 10px;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+    
+    }
+
+    .sobreMi a img{
+        height: 15px;
+        width: 15px;
+    }
+
+    
+    .sobreMiMapa{
+        padding-left: 10%;
+        height: 80%;
+        width: 80%;
+
+    }
+
+
+    .sobreMiVideo{
+        justify-self: center;
+        width: 70%;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    /*USAR GRID EN EL ORIGINAL*/
+}
+
+
+
+
+
+
+    
+
+    
+    
+    
