@@ -1,6 +1,5 @@
 
 
-
 *{
     margin: 0;
     padding: 0;
@@ -50,6 +49,18 @@
     height: 100%;
 
 }
+/*esto es para el menu hamburguesa*/
+
+.iconoHamburguesa,
+.iconoCancelar  {
+    display: none;
+}
+
+
+#check{
+    display: none;
+}
+
 
 
 /*titulo barra de arriba*/
@@ -246,7 +257,7 @@ text-shadow: 1px 1px #000000;
 
 
 .menugaleria img:hover{
-    transform: scale(1.05,1.05);
+    
     border-radius:0%;
     z-index: 0;
 }
@@ -580,12 +591,24 @@ text-shadow: 1px 1px #000000;
 .subir{
     text-decoration: none;
     margin-left: 95%;
-    height: 10px;
-    width: 10px;
+    height: 30px;
+    width: 30px;
     position: -webkit-sticky;
     position: sticky;
     top: 93vh;
     
+}
+
+.subir img{
+    filter: grayscale(0.5);
+    filter: opacity(75%);
+    height: 100%;
+    width: 100%;
+}
+
+.subir img:hover{
+    transform: scale(1.07,1.07);
+    filter: opacity(100%);
 }
 
 
@@ -708,44 +731,145 @@ text-shadow: 1px 1px #000000;
 /*para celulares*/
 @media only screen and (max-width:600px) {
 
+
     /*eso es el header*/
     .header1{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        height: 240px;
-        position:static ;
-    }
-    .menues{
-        flex-direction: column;
-
-        
-    }
-
-    .menues li {
-        padding: 7px;
-    }
-    .menues li a {
-        font-size: 10px;
-        padding: 5px;
+        height: 60px;
+        position:sticky ;
     }
 
 
     .icon {
         margin-right: 3px;
-        width: 15px;
-       height: 15px;
+        width: 20px;
+        height: 20px;
     }
 
 
     .logoInicio a{
-        justify-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        font-size: 30px;
+        font-size: 60px;
     }
+    
+
+    /*vamos a probar el nav con menu hamburguesa*/
+
+    .iconoHamburguesa,
+    .iconoCancelar  {
+        width: 50px;    
+    }
+    
+    .iconoCancelar {
+        display: none;
+    }
+    
+    .iconoHamburguesa{
+        display: block;
+    }
+    
+
+    
+    #check:checked ~ .navegacion {
+        position: absolute;
+        display: block;
+        transition: transform .5s ease-in;
+        transform: translate(0,0);
+    }
+    
+
+
+    #check:checked ~ label img.iconoCancelar {
+        display: block;        
+    }
+    
+    #check:checked ~ *{
+        overflow-y: scroll;
+        overflow-y: hidden;
+    }
+
+
+    #check:checked ~ label img.iconoHamburguesa {
+        display: none;
+    }
+    
+    .navegacion {
+        width: 100vw;
+        background-image: linear-gradient(to right, #E100FF,#7700ff);
+        height:100vh;
+        position: absolute;
+        top:70px;
+        left: 0;
+        z-index: 99999999;
+        transition: transform .3s ease;
+        transform: translate(-100%,0%);
+    }
+    
+    
+    .menues {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80%;
+    }
+    
+    
+    .menues li {
+        width: 50%;
+        height: 5%;
+        text-align: center;
+    }
+    
+    .navegacion li a img {
+        margin-right: 10px;
+    }
+    
+    
+    .menues li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 30px;
+        font-size: 24px;
+        font-weight: normal;
+        font-family: 'Rubik', sans-serif;
+    
+    }
+    
+    .menues li a.active {
+        color: #ff64af;
+        font-weight: bolder;
+        animation-name: resaltar;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+     }
+    
+    .menues li a:hover {
+        color: #ff64af;
+        background-color: #ffffff9a;
+        border-radius: 100px;
+    
+    }
+
+    @keyframes resaltar {
+        0% {
+            transform: scale(1,1);
+            color: #ffffff;
+        }
+        
+        100% {
+            transform: scale(1.05,1.05);
+            color: #ff64af;
+        }
+        
+    }
+
+
 
     /*--------- esto es el footer----------- */
     .miFooter{
@@ -826,23 +950,29 @@ text-shadow: 1px 1px #000000;
     /*---------esto pertenece a la seccion sobre mi-----*/
     .sobreMiMain{
         height: 900px;
+        display: flex;
     }
     
     .sobreMi{ 
         display: flex;
         flex-direction: column;
+        justify-content: center;
         height: 900px;
         
     }
 
     .sobreMiTitulo{
         text-align: center;
+        justify-items: center;
     }
 
     .sobreMiTexto{
         text-align: center;
+        justify-items: center;
         font-size: 15px;
-        width: 85%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .sobreMiEncontranosEn
@@ -866,9 +996,10 @@ text-shadow: 1px 1px #000000;
 
     
     .sobreMiMapa{
-        padding-left: 10%;
         height: 80%;
-        width: 80%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
 
     }
 
@@ -881,6 +1012,11 @@ text-shadow: 1px 1px #000000;
     }
 
     /*USAR GRID EN EL ORIGINAL*/
+
+    /*seccion contacto*/
+    .mainContacto{
+        height: calc(100vh - 146px);
+    }
 }
 
 
