@@ -190,42 +190,6 @@ text-shadow: 1px 1px #000000;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*seccion de galeria*/
 .menugaleria{
     background-repeat: no-repeat;
@@ -447,13 +411,6 @@ text-shadow: 1px 1px #000000;
 }
 
 
-
-.articulosReceta{
-    display: flex;
-    flex-direction: row;
-    
-}
-
 .articulosRecetaFormulario{
     display: flex;
     font-family: 'Sansita Swashed', cursive;
@@ -540,24 +497,19 @@ text-shadow: 1px 1px #000000;
 
 
 
-/*seccion recetas calientes*/
+
 .recetas{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%; /*50% 1fr; primeramente tenia estos datos, se cambiaron para usar justify-content*/
+    grid-template-rows: 50px 400px;
+    grid-template-areas: "subSeccion subSeccion subSeccion subSeccion"
+                       " receta1 receta2 receta3 receta4";
+    column-gap: 1%; /*lo que hace es dar espacio entre las columnas en la grilla*/
+    row-gap: 20px;
+    padding-top: 60px;
+    margin-bottom: 100px;
 }
 
-.recetas div{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100%;
-}
 
 
 
@@ -565,8 +517,8 @@ text-shadow: 1px 1px #000000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 285px;
-    height: 350px;
+    width: 85%;
+    height: 100%;
     padding: 15px;
     margin:10px 15px 12px 10px ;
     border: 1px solid black;
@@ -575,6 +527,9 @@ text-shadow: 1px 1px #000000;
     background-color: #e7dfff;
     overflow: hidden;
 }
+
+
+
 
 .recetas article img {
     height: 50%;
@@ -585,41 +540,15 @@ text-shadow: 1px 1px #000000;
 
 
 
-
-
-/*acomodar letras del titulo y subir*/
-.subir{
-    text-decoration: none;
-    margin-left: 95%;
-    height: 30px;
-    width: 30px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 93vh;
-    
-}
-
-.subir img{
-    filter: grayscale(0.5);
-    filter: opacity(75%);
-    height: 100%;
-    width: 100%;
-}
-
-.subir img:hover{
-    transform: scale(1.07,1.07);
-    filter: opacity(100%);
-}
-
-
 /*vamos a acomodar los sub titulos de cada receta*/
 .subSeccion{
+    grid-area:subSeccion;
+    align-self: end;
     font-family: 'Roboto', sans-serif;
     font-style: oblique;
-    margin-left: 15px;
-    margin-top: 100px;
     -webkit-text-stroke: 1px rgb(6, 252, 239);
     color:#4400ff ;
+    margin-top: 100px;
 }
 
 
@@ -724,7 +653,30 @@ text-shadow: 1px 1px #000000;
 }
 
 /*-------------*/
+/*acomodar letras del titulo y subir*/
+.subir{
+    text-decoration: none;
+    margin-left: 95%;
+    height: 30px;
+    width: 30px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 93vh;
+    
+}
 
+.subir img{
+    filter: grayscale(0.5);
+    filter: opacity(75%);
+    height: 100%;
+    width: 100%;
+    color: red;
+}
+
+.subir img:hover{
+    transform: scale(1.07,1.07);
+    filter: opacity(100%);
+}
 
 
 /*------------ empezamos a probar mediaqueries ---------------------*/
@@ -738,7 +690,7 @@ text-shadow: 1px 1px #000000;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 60px;
+        height: 55px;
         position:sticky ;
     }
 
@@ -812,7 +764,7 @@ text-shadow: 1px 1px #000000;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        height: 80%;
+        height: 60%;
     }
     
     
@@ -942,8 +894,6 @@ text-shadow: 1px 1px #000000;
         align-items: center;
         justify-content:center;
         align-content: center;
-
-        
     }
     
 
@@ -1017,6 +967,182 @@ text-shadow: 1px 1px #000000;
     .mainContacto{
         height: calc(100vh - 146px);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*aca estamos con la seccion de recetas*/
+        
+    .articulosRecetaFormulario ul {
+        display: grid;
+        width: 80%;
+        padding-top: 30px;
+        grid-template-columns: 40% 40%;
+        grid-template-rows: 70px 70px 70px;
+        grid-template-areas: "caliente frio"
+                             "fritos base_helados"
+                             "quesoyfruta quesoyfruta";
+        border-radius: 80px;
+        justify-items:center;
+        align-items: center;
+        background-color: #ec73d2c4;
+    }
+
+
+    .recetasBusqueda input{
+        border-radius: 50px;
+        display: inline;
+        margin-top: 10px;
+        border-radius: 15px;
+        padding: 5px;
+        text-align: center;
+        background-color: #ffffffad;
+        text-align: center;;
+        
+    }
+
+    .recetasBusqueda button {
+        border-radius: 50px;
+        display: inline;
+        margin-top: 10px;
+        border-radius: 15px;
+        padding: 5px;
+        text-align: center;
+        background-color: #ffffffad;
+        color: grey;
+    }   
+
+
+    .recetas{
+        display: grid;
+        grid-template-columns: 90%; /*50% 1fr; primeramente tenia estos datos, se cambiaron para usar justify-content*/
+        grid-template-rows: 30px 400px 400px 400px 400px;
+        grid-template-areas: "subSeccion"
+                           " receta1"
+                           " receta2"
+                           " receta3"
+                           "receta4";
+        row-gap: 10px;
+        padding-top: 20px;
+        margin-bottom: 80px;
+    }
+
+
+    .subir{
+        text-decoration: none;
+        margin-left: 50%;
+        height: 30px;
+        position: sticky;
+        top: 93vh;
+        
+    }
+ 
+    /*ver mas solo de caliente*/
+    .verMasCaliente a{
+        font-size: 65px;
+        margin-top: 50%;
+        margin-left: 10%;
+    }
+
+
+    .verMasCaliente a:hover{
+        font-size: 70px;
+        margin-left: 9%;
+
+    }
+
+
+    /*-------------*/
+
+    /*ver mas solo de frio*/
+    .verMasFrio a{
+        font-size: 65px;
+        margin-top: 50%;
+        margin-left: 10%;
+    }
+
+
+    .verMasFrio a:hover{
+        font-size: 70px;
+        margin-left: 9%;
+    }
+
+    /*-------------*/
+
+    /*ver mas solo de frito*/
+    .verMasFrito a{
+        font-size: 65px;
+        margin-top: 50%;
+        margin-left: 10%;
+    }
+
+
+    .verMasFrito a:hover{
+        font-size: 70px;
+        margin-left: 9%;
+    }
+
+    /*-------------*/
+
+    /*ver mas solo de base de helado*/
+    .verMasBaseHelado a{
+        font-size: 65px;
+        margin-top: 50%;
+        margin-left: 10%;
+    }
+
+
+    .verMasBaseHelado a:hover{
+        font-size: 70px;
+        margin-left: 9%;
+    }
+
+
+    /*-------------*/
+
+    /*ver mas solo de queso y fruta*/
+    .verMasQuesoyFruta a{
+        font-size: 65px;
+        margin-top: 50%;
+        margin-left: 10%;
+    }
+
+
+    .verMasQuesoyFruta a:hover{
+        font-size: 70px;
+        margin-left: 9%;
+    }
+
+
+    /*vamos a acomodar los sub titulos de cada receta*/
+    .subSeccion{
+        margin-top: 10px;
+    }
+
+    .recetas article {
+        height: 90%;
+
+    }
+
 }
 
 
